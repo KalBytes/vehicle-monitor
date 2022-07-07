@@ -1,0 +1,44 @@
+@import "vars";
+@import "header";
+
+.header {
+  font-weight: 300;
+  padding: 15px;
+  @include header(50px, $gray-light, $black, 14px, $gray);
+  .header-left {
+    .breadcrumbs {
+      position: relative;
+      color: inherit;
+      height: 50px;
+      font-size: 1.125rem;
+      line-height: 30px;
+      padding: 0.625rem 0;
+      margin-left: 1rem;
+      margin-top: 20px;
+    }
+  }
+
+  .header-right {
+    margin-left: auto;
+    .user {
+     display: flex;
+     align-items: center;
+      img {
+        width: 45px;
+        height: 45px;
+        border-radius: 45px;
+        margin-right: 10px;
+        font-size: 15px;
+      }
+    }
+  }
+}
+
+li {
+  position: relative;
+}
+
+img {
+  margin-top: 5px;
+  cursor: pointer;
+}

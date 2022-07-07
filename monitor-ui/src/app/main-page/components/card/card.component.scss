@@ -1,0 +1,23 @@
+mat-card {
+  width: 200px;
+  margin: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  h3 {
+    font-weight: 700;
+  }
+  .icon {
+    height: 100px;
+    img {
+      max-width: 100px;
+    }
+  }
+  p {
+    height: 50px;
+  }
+}
+
+mat-card:hover {
+  cursor: pointer;
+}

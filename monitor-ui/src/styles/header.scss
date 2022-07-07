@@ -1,0 +1,63 @@
+@import "vars";
+
+@mixin header(
+  $navBarHight,
+  $backGroundColor,
+  $color,
+  $fontSize,
+  $activeNavColor
+) {
+  display: flex;
+  height: $navBarHight;
+  align-items: center;
+  font-weight: 400;
+
+  .header-left {
+    font-size: $fontSize;
+    display: flex;
+    .header-logo {
+      margin: 5px 10px 0px 5px;
+      img {
+        max-height: 40px;
+      }
+    }
+  }
+
+  .menu-item {
+    margin: 5px;
+    list-style-type: none;
+    display: flex;
+
+    li {
+      margin: 15px 15px;
+      display: inline-block;
+      transition: 0.2s color;
+      outline-color: transparent;
+      &:hover {
+        cursor: pointer;
+        color: $activeNavColor;
+      }
+    }
+  }
+
+  .navbar-right {
+    margin-left: auto;
+    margin-right: 50px;
+  }
+
+  .active-nav-underline {
+    text-decoration: none;
+    position: relative;
+  }
+
+  .active-nav-underline::after {
+    position: absolute;
+    content: "";
+    height: 4px;
+    bottom: -6px;
+    margin: 0 auto;
+    left: 0;
+    width: 100%;
+    background: $activeNavColor;
+  }
+}

@@ -1,0 +1,66 @@
+@import "vars";
+
+.view {
+  display: flex;
+  flex-direction: row;
+  box-shadow: $box-shadow-medium;
+  border-radius: $border-radios-small;
+  height: 200px;
+  padding: 10px;
+  background-color: #fff;
+
+  &--left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+  }
+
+  &--right {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.view-row {
+  display: flex;
+  margin: 5px;
+  align-items: center;
+  color: $gray;
+  &--text {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+    &--icon {
+      margin-right: 5px;
+    }
+
+    &--text {
+
+    }
+    
+  }
+  &--value {
+    color: $black;
+    font-weight: 500;
+  }
+}
+
+.speedometer-ellipse {
+  $size: 125px;
+  $border: 10px;
+  $font-size: 70px;
+  width: $size;
+  height: $size;
+  border-radius: $size;
+  border: $border solid $red;
+  margin: auto;
+  text-align: center;
+  line-height: $size;
+  font-size: $font-size;
+}
+
+.default-view {
+  height: 200px;
+}

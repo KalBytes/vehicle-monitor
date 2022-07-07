@@ -1,0 +1,17 @@
+<div class="main-page">
+  <section class="entry-banner">
+    <img src="../../assets/BANNER.jpeg" alt="banner" />
+  </section>
+
+  <section class="title">
+    <h1>Welcome To Autonomous Car Monitoring Panel!</h1>
+  </section>
+
+  <section class="cards">
+    <app-card
+      *ngFor="let card of cards"
+      [cardData]="card"
+      [routerLink]="card.path"
+    ></app-card>
+  </section>
+</div>

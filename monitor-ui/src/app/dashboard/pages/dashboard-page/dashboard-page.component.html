@@ -1,0 +1,35 @@
+<div class="dashboard">
+  <div class="status-view">
+    <div class="status-view--title">Vehicle status</div>
+    <app-vehicle-status-view [vehicleStatus]="activeVehicle?.status"></app-vehicle-status-view>
+  </div>
+
+  <div class="sensor-table">
+    <div class="sensor-table--title">
+      Camera sensor info
+    </div>
+    <div class="sensor-table--table">
+      <app-material-table [columnsWithLabels]="cameraTableColumns" [tableData]="activeVehicle?.camera"></app-material-table>
+    </div>
+  </div>
+
+  <div class="sensor-table">
+    <div class="sensor-table--title">
+      Radar sensor info
+    </div>
+    <div class="sensor-table--table">
+      <app-material-table [columnsWithLabels]="radarTableColumns" [tableData]="activeVehicle?.radar"></app-material-table>
+    </div>
+  </div>
+
+  <div class="vehicle-view">
+    <div class="map--text">Active vehicle camera</div>
+    <app-vehicle-view [hidden]="!activeVehicle"></app-vehicle-view>
+    <app-default-view [hidden]="activeVehicle"></app-default-view>
+  </div>
+
+  <div class="map">
+    <div class="map--text">Available vehicles <span *ngIf="!mapMarkers"><mat-spinner diameter="15"></mat-spinner></span></div>
+    <app-map [markers]="mapMarkers" (markerClick)="onMarkerClick($event)"></app-map>
+  </div>
+</div>

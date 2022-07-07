@@ -1,0 +1,13 @@
+@import "vars";
+.vehicle-view {
+
+  &--image {
+    height: 350px;
+   img {
+     max-width: 100%;
+     height: 100%;
+     box-shadow: $box-shadow-medium;
+     border-radius: $border-radios-small;
+   }
+  }
+}

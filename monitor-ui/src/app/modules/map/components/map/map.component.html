@@ -1,0 +1,19 @@
+<div class="map">
+  <agm-map 
+  #mapEl
+  [latitude]="mapConfig.latitude"
+  [longitude]="mapConfig.longitude"
+  [zoom]="mapConfig.zoom"
+  [disableDefaultUI]="mapConfig.disableDefaultUI"
+  [mapDraggable]="true">
+
+    <agm-marker 
+      *ngFor="let m of markers;"
+      [latitude]="m.latitude"
+      [longitude]="m.longitude"
+      [iconUrl]="markerIcon"
+      (markerClick)="clickedMarker(m.clickValue)"
+    >
+  </agm-marker>
+</agm-map>
+</div>

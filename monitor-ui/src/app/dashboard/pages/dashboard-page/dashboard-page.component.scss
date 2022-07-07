@@ -1,0 +1,64 @@
+@import "vars";
+
+.dashboard {
+  color: $gray;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+
+  & > * {
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+
+  .status-view {
+    width: 30%;
+  }
+
+  .sensor-table {
+    width: 30%;
+    height: 300px;
+    &--title {
+      margin-bottom: 10px;
+    }
+    &--table {
+      height: 300px;
+      overflow: auto;
+      box-shadow: $box-shadow-medium;
+    }
+  }
+  .map {
+    height: 350px;
+    width: 50%;
+    border-radius: 5px;
+    &--text {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  .vehicle-view {
+    width: 620px;
+    height: 350px;
+  }
+}
+
+mat-spinner {
+  margin-left: 5px;
+}
+
+@media screen and (max-width: 1100px) {
+  .sensor-table, .status-view, .map, .vehicle-view  {
+    width: 60% !important;
+  }
+  .status-view {
+    width: 60% !important;;
+  }
+  .dashboard {
+    flex-direction: column;
+    align-items: center;
+  }
+}

@@ -1,0 +1,16 @@
+<mat-card>
+  <div class="card-title">
+    <h3>{{ cardData.title }}</h3>
+  </div>
+  <div class="icon">
+    <img [src]="cardData.iconSrc" [alt]="cardData.altText" />
+  </div>
+  <mat-card-content>
+    <p>
+      {{ cardData.contentText }}
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button>{{ cardData.buttonText }}</button>
+  </mat-card-actions>
+</mat-card>

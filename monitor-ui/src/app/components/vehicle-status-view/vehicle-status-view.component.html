@@ -1,0 +1,48 @@
+<div *ngIf="vehicleStatus" class="view">
+  <div class="view--left">
+    <!-- Model -->
+    <div class="view-row">
+      <div class="view-row--text">
+        <span class="view-row--text--icon">
+          <mat-icon>directions_car</mat-icon>
+        </span>
+        <span class="view-row--text--text">Model:</span>
+      </div>
+      <div class="view-row--value">{{model}}</div>
+    </div>
+
+    <!-- Location -->
+    <div class="view-row">
+      <div class="view-row--text">
+        <span class="view-row--text--icon">
+          <mat-icon>location_on</mat-icon>
+        </span>
+        <span class="view-row--text--text">Location:</span>
+      </div>
+      <div class="view-row--value">
+        {{vehicleStatus.currentLatitude | number : '1.0-2' }} , 
+        {{vehicleStatus.currentLongitude | number : '1.0-2'}}
+      </div>
+    </div>
+
+    <!-- Temperature -->
+    <div class="view-row">
+      <div class="view-row--text">
+        <span class="view-row--text--icon">
+          <mat-icon>wb_sunny</mat-icon>
+        </span>
+        <span class="view-row--text--text">Temperature:</span>
+      </div>
+      <div class="view-row--value">{{vehicleStatus.temperature}}°C</div>
+    </div>
+  </div>
+    <div class="view--right">
+      <div class="speedometer-ellipse">
+        {{vehicleStatus.speed}}
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="!vehicleStatus" class="default-view">
+    <app-default-view></app-default-view>
+  </div>
